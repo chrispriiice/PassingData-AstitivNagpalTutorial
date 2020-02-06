@@ -26,8 +26,8 @@
                                     <segue destination="rMM-GG-JC9" kind="presentation" identifier="getDataSegue" id="i88-px-HDR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recieved Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNC-PJ-2Hx">
-                                <rect key="frame" x="154" y="288" width="110" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Received Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNC-PJ-2Hx">
+                                <rect key="frame" x="154" y="288" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -37,6 +37,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="receivedDataLabel" destination="mNC-PJ-2Hx" id="ccf-ii-KFO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text to send back!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-3w-yf3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text to send back!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-3w-yf3">
                                 <rect key="frame" x="20" y="285" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -62,15 +65,22 @@
                                 <state key="normal" title="Send Data">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendDataButtonClicked:" destination="rMM-GG-JC9" eventType="touchUpInside" id="ApC-WG-clb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JEr-3w-yf3" firstAttribute="top" secondItem="Iud-Fb-swy" secondAttribute="top" constant="285" id="2Pf-Ls-5O9"/>
                             <constraint firstItem="JEr-3w-yf3" firstAttribute="leading" secondItem="Iud-Fb-swy" secondAttribute="leading" constant="20" id="Gcu-mD-mL5"/>
                             <constraint firstItem="Iud-Fb-swy" firstAttribute="trailing" secondItem="JEr-3w-yf3" secondAttribute="trailing" constant="20" id="YkC-8F-5vo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iud-Fb-swy"/>
                     </view>
+                    <connections>
+                        <outlet property="dataToSendTextField" destination="JEr-3w-yf3" id="EBM-iL-ZSg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPg-qq-5NZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
